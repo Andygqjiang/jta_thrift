@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="AdDao">
+	<select id="findAll" resultMap="BaseResultMap">
+	  SELECT ID,ICON_PATH,URL_LINK FROM T_AD
+	</select>
+	<resultMap type="com.jta.atomikos.model.Ad" id="BaseResultMap">
+	  <id property="eid" column="ID"/>
+	  <result property="iconPath" column="ICON_PATH"/>
+	  <result property="urlLink" column="URL_LINK"/>
+	</resultMap>
+
+	<insert id="insert" keyProperty="eid" useGeneratedKeys="true">
+		INSERT INTO T_AD (ICON_PATH, URL_LINK) VALUES (#{iconPath}, #{urlLink})
+	</insert>
+</mapper>

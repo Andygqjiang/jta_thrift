@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SysUserDao">
+	<resultMap id="BaseResultMap" type="com.jta.atomikos.model.SysUser">
+		<id column="EID" property="eid" />
+		<result column="NAME" property="name" />
+		<result column="TELEPHONE" property="telephone" />
+		<result column="ACCOUNT" property="account" />
+		<result column="PASSWORD" property="password" />
+		<result column="IM_ACCOUNT" property="imAccount" />
+		<result column="ICON" property="icon" />
+		<result column="SEX" property="sex" />
+		<result column="EMAIL" property="email" />
+		<result column="WORK_IMG" property="workImg" />
+		<result column="USER_TYPE" property="userType" />
+		<result column="CREATE_TIME" property="createTime" />
+		<result column="UPDATE_TIME" property="updateTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		EID, NAME, TELEPHONE, ACCOUNT, PASSWORD,
+		IM_ACCOUNT, ICON,EMAIL,SEX,USER_TYPE,
+		DATE_FORMAT(CREATE_TIME,'%Y-%m-%d') CREATE_TIME,WORK_IMG
+	</sql>
+	<insert id="insert"
+		keyProperty="eid" useGeneratedKeys="true">
+		insert into SYS_USER (
+		TELEPHONE,
+		ACCOUNT,
+		PASSWORD,
+		IM_ACCOUNT,
+		CREATE_TIME,
+		UPDATE_TIME,
+		SEX,
+		USER_TYPE
+		)
+		values (
+		#{telephone},
+		#{account},
+		#{password},
+		#{imAccount},
+		now(),
+		now(),
+		'1',
+		1
+		)
+	</insert>
+</mapper>

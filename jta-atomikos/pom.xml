@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>jta-project</artifactId>
+        <groupId>jta-project</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>jta-atomikos</artifactId>
+    <packaging>war</packaging>
+    <name>jta-atomikos Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+
+    <build>
+        <finalName>jta-atomikos</finalName>
+    </build>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <version.spring>4.2.5.RELEASE</version.spring>
+        <version.slf4j.api>1.7.7</version.slf4j.api>
+        <version.slf4j.log4j12>1.7.7</version.slf4j.log4j12>
+        <version.slf4j.jcl.over.slf4j>1.7.7</version.slf4j.jcl.over.slf4j>
+        <version.junit>4.12</version.junit>
+        <version.fastjson>1.1.41</version.fastjson>
+        <version.mybatis>3.3.1</version.mybatis>
+        <version.mybatis.spring>1.2.5</version.mybatis.spring>
+        <version.dbcp>1.4</version.dbcp>
+        <version.mysqlj>5.1.39</version.mysqlj>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${version.junit}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atomikos</groupId>
+            <artifactId>transactions-jdbc</artifactId>
+            <version>4.0.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.thrift</groupId>
+            <artifactId>libthrift</artifactId>
+            <version>0.9.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.24</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.googlecode.log4jdbc/log4jdbc
+        <dependency>
+            <groupId>com.googlecode.log4jdbc</groupId>
+            <artifactId>log4jdbc</artifactId>
+            <version>1.2</version>
+        </dependency>-->
+
+    </dependencies>
+</project>
